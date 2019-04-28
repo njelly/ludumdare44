@@ -28,6 +28,23 @@ namespace Tofunaut.LudumDare44
                 Destroy(gameObject);
             }
         }
+        
+        public void OnTriggerEnter2D(Collider2D col)
+        {
+            TowerBullet bullet = col.gameObject.GetComponent<TowerBullet>();
+            if(bullet == null) {
+                return;
+            }
+
+            health -= 1;
+            if(health <= 0) 
+            {
+                Destroy(gameObject);
+                bullet.source.killCount++;
+            }
+
+            Destroy(bullet.gameObject);
+        }
     }
 
     public class EnemyEventArgs : EventArgs

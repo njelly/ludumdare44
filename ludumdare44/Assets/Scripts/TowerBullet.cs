@@ -7,34 +7,11 @@ namespace Tofunaut.LudumDare44
     {
         public float speed;
         public Vector3 target;
+        public Tower source;
 
-        private Vector3 _startPos;
-
-        private void Start()
+        private void Update()
         {
-            _startPos = gameObject.transform.position;
-
-            if(target == Vector3.zero)
-            {
-                Debug.LogError("target is zero");
-                Destroy(gameObject);
-                return;
-            }
-
-
-        }
-
-        private IEnumerator MoveCoroutine()
-        {
-            float progress = 0f;
-
-            while(true)
-            {
-                progress += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(_startPos, target, progress);
-
-                yield return null;
-            }
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target, speed * Time.deltaTime);
         }
     }
 }
