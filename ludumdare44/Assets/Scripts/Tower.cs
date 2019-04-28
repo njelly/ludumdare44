@@ -1,10 +1,13 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Tofunaut.LudumDare44
 {
     public class Tower : MonoBehaviour
     {
+        public static List<Tower> Instances = new List<Tower>();
+
         public TowerBullet bulletPrefab;
         public float range;
         public float fireInterval;
@@ -13,11 +16,17 @@ namespace Tofunaut.LudumDare44
         private void Start() 
         {
             StartCoroutine(fireCoroutine());
+            Instances.Add(this);
         }
-        
+
+        private void OnDestroy()
+        {
+            Instances.Remove(this);
+        }
+
         private IEnumerator fireCoroutine() 
         {
-            while(true) 
+            while(!GameController.IsGameOver)
             {
                 yield return new WaitForSeconds(fireInterval);
 
@@ -50,14 +59,6 @@ namespace Tofunaut.LudumDare44
             bullet.transform.position = gameObject.transform.position;
             bullet.target = nearestEnemy.gameObject.transform.position;
             bullet.source = this;
-        }
-
-        public void OnMouseDown()
-        {
-            GameController gameController = FindObjectOfType<GameController>();
-            gameController.Health += killCount;
-
-            Destroy(gameObject);
         }
     }
 }

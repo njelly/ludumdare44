@@ -18,10 +18,22 @@ namespace Tofunaut.LudumDare44
             _splineFollower = GetComponent<SplineFollower>();
             _splineFollower.computer = FindObjectOfType<SplineComputer>();
             _splineFollower.followSpeed = pathSpeed;
+
+            GameController.GameOver += GameController_GameOver;
+        }
+
+        private void OnDestroy()
+        {
+            GameController.GameOver -= GameController_GameOver;
         }
 
         private void Update()
         {
+            if(GameController.IsGameOver)
+            {
+                return;
+            }
+
             if (_splineFollower.clampedPercent >= 1)
             {
                 EnemyCompletedPath?.Invoke(this, new EnemyEventArgs(this));
@@ -41,9 +53,16 @@ namespace Tofunaut.LudumDare44
             {
                 Destroy(gameObject);
                 bullet.source.killCount++;
+
+                GameController.Score += 1;
             }
 
             Destroy(bullet.gameObject);
+        }
+
+        private void GameController_GameOver(object sender, EventArgs e)
+        {
+            _splineFollower.enabled = false;
         }
     }
 

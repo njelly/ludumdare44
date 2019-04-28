@@ -12,6 +12,10 @@ namespace Tofunaut.LudumDare44
         private void Update()
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, target, speed * Time.deltaTime);
+            if((gameObject.transform.position - target).sqrMagnitude <= float.Epsilon)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
