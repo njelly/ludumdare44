@@ -51,5 +51,13 @@ namespace Tofunaut.LudumDare44
             bullet.target = nearestEnemy.gameObject.transform.position;
             bullet.source = this;
         }
+
+        public void OnMouseDown()
+        {
+            GameController gameController = FindObjectOfType<GameController>();
+            gameController.Health += killCount;
+
+            Destroy(gameObject);
+        }
     }
 }

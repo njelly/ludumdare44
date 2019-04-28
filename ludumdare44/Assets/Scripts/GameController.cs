@@ -5,12 +5,27 @@ namespace Tofunaut.LudumDare44
 {
     public class GameController : MonoBehaviour
     {
+        public int Health
+        {
+            get
+            {
+                return _health;
+            }
+            set
+            {
+                _health = value;
+                UpdateHealthLabel();
+            }
+        }
+
         [Header("References")]
         public TMPro.TextMeshProUGUI healthLabel;
         public Image heartIcon;
 
         [Header("Config")]
-        public int health;
+        public int startHealth;
+
+        private int _health;
 
         private void Awake()
         {
@@ -19,22 +34,23 @@ namespace Tofunaut.LudumDare44
 
         private void Start()
         {
+            _health = startHealth;
             UpdateHealthLabel();
         }
 
         private void UpdateHealthLabel()
         {
-            healthLabel.text = health.ToString();
+            healthLabel.text = _health.ToString();
 
             iTween.PunchScale(heartIcon.gameObject, Vector3.one * 0.5f, 1f);
         }
 
         private void Enemy_EnemyCompletedPath(object sender, EnemyEventArgs e)
         {
-            health -= 1;
-            if (health <= 0)
+            _health -= 1;
+            if (Health <= 0)
             {
-                health = 0;
+                _health = 0;
                 Debug.Log("Game Over");
             }
 
