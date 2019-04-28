@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5245999031637868789}
   - component: {fileID: 5245999031637868791}
   m_Layer: 0
-  m_Name: basic_enemy_0
+  m_Name: basic_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  pathSpeed: 0.5
+  pathSpeed: 1
 --- !u!212 &5245999031637868790
 SpriteRenderer:
   m_ObjectHideFlags: 0

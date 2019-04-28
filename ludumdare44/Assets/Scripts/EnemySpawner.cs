@@ -34,7 +34,6 @@ namespace Tofunaut.LudumDare44
 
         private void TrySpawnEnemy()
         {
-            Debug.Log("try spawn");
             float roll = Random.value;
             if (roll < spawnChance)
             {
@@ -44,7 +43,6 @@ namespace Tofunaut.LudumDare44
 
         private void SpawnEnemy()
         {
-            Debug.Log("spawned!");
             Enemy enemy = Instantiate(enemyPrefab);
             enemy.transform.position = spawnPosition.position;
         }
