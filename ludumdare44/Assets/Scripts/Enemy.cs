@@ -12,15 +12,12 @@ namespace Tofunaut.LudumDare44
         public float pathSpeed;
 
         private SplineFollower _splineFollower;
-        private bool _hasInvokedCompleteEvent;
 
         private void Start()
         {
             _splineFollower = GetComponent<SplineFollower>();
             _splineFollower.computer = FindObjectOfType<SplineComputer>();
             _splineFollower.followSpeed = pathSpeed;
-
-            _hasInvokedCompleteEvent = false;
 
             GameController.GameOver += GameController_GameOver;
         }
@@ -37,12 +34,10 @@ namespace Tofunaut.LudumDare44
                 return;
             }
 
-            if (_splineFollower.clampedPercent >= 1 && !_hasInvokedCompleteEvent)
+            if (_splineFollower.clampedPercent >= 1)
             {
                 EnemyCompletedPath?.Invoke(this, new EnemyEventArgs(this));
                 Destroy(gameObject);
-
-                _hasInvokedCompleteEvent = true;
             }
         }
         

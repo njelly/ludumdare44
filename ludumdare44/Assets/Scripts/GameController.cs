@@ -86,6 +86,7 @@ namespace Tofunaut.LudumDare44
 
         private void OnDestroy()
         {
+            Enemy.EnemyCompletedPath -= Enemy_EnemyCompletedPath;
             _instance = null;
         }
 
