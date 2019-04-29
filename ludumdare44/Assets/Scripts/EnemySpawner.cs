@@ -61,7 +61,6 @@ namespace Tofunaut.LudumDare44
                 weightCounter += spawnWeightPairs[pairIdx].weight;
                 if(roll <= weightCounter)
                 {
-                    Debug.Log("spawn: " + spawnWeightPairs[pairIdx].prefab.name);
                     SpawnEnemy(spawnWeightPairs[pairIdx].prefab);
                     break;
                 }

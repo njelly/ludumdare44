@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWeightPairs:
-  - weight: 10
+  - weight: 12
     prefab: {fileID: 5245999031637868784, guid: 22897d56e285e9247b41443442e70b92,
       type: 3}
   - weight: 2
@@ -159,13 +159,13 @@ MonoBehaviour:
   - weight: 2
     prefab: {fileID: 5245999031637868784, guid: 7db1de992500b9d4bb29c8ceb2776172,
       type: 3}
-  - weight: 1
+  - weight: 0.5
     prefab: {fileID: 5245999031637868784, guid: 9bc43e58645364443bbec87c95766e1d,
       type: 3}
-  - weight: 1
+  - weight: 0.5
     prefab: {fileID: 5245999031637868784, guid: b110e4cf1ab95be489c29ee597f587a0,
       type: 3}
-  spawnChance: 0.5
+  spawnChance: 0.55
   spawnEventInterval: 2
   spawnIntervalDecreaseRate: 0.005
   spawnPosition: {fileID: 894079761}

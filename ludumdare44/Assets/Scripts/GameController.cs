@@ -118,12 +118,8 @@ namespace Tofunaut.LudumDare44
             if (_worldPlane.Raycast(ray, out float enter))
             {
                 Vector3 hitPoint = ray.GetPoint(enter);
-
-                Debug.LogFormat("hitPoint: {0}", hitPoint.ToString("F2"));
                 
                 hitPoint = new Vector3(Mathf.Round(hitPoint.x), Mathf.Round(hitPoint.y), hitPoint.z);
-
-                Debug.LogFormat("clamped: {0}", hitPoint.ToString("F2"));
 
                 Tower hitTower = null;
                 foreach(Tower tower in Tower.Instances)
@@ -152,6 +148,8 @@ namespace Tofunaut.LudumDare44
 
         private void Enemy_EnemyCompletedPath(object sender, EnemyEventArgs e)
         {
+            Debug.Log("enemy completed path");
+
             if(IsGameOver)
             {
                 return;
