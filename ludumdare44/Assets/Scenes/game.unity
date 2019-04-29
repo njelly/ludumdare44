@@ -150,11 +150,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnWeightPairs:
-  - weight: 5
+  - weight: 10
     prefab: {fileID: 5245999031637868784, guid: 22897d56e285e9247b41443442e70b92,
       type: 3}
   - weight: 2
     prefab: {fileID: 5245999031637868784, guid: ffd427ecdf4e9c948a387bb219d79726,
+      type: 3}
+  - weight: 2
+    prefab: {fileID: 5245999031637868784, guid: 7db1de992500b9d4bb29c8ceb2776172,
+      type: 3}
+  - weight: 1
+    prefab: {fileID: 5245999031637868784, guid: 9bc43e58645364443bbec87c95766e1d,
+      type: 3}
+  - weight: 1
+    prefab: {fileID: 5245999031637868784, guid: b110e4cf1ab95be489c29ee597f587a0,
       type: 3}
   spawnChance: 0.5
   spawnEventInterval: 2
@@ -521,9 +530,9 @@ RectTransform:
   m_Father: {fileID: 1082765907}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: 345}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 55, y: -55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771890967
@@ -3011,9 +3020,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 800}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3445,9 +3454,9 @@ RectTransform:
   m_Father: {fileID: 1082765907}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -260, y: 343}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 140, y: -57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817460616

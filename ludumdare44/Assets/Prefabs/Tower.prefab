@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 30567187691355286}
   - component: {fileID: 3450224190374386118}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,8 @@ MonoBehaviour:
   range: 3
   fireInterval: 1
   killCount: 0
+  lifetime: 16
+  startFlickeringTime: 4
 --- !u!61 &3450224190374386118
 BoxCollider2D:
   m_ObjectHideFlags: 0
